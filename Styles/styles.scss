@@ -1,0 +1,65 @@
+﻿$background-dark: #20243F;
+$background-default: #2B2F50;
+$background-light: #747AAC;
+$text-default: #747AAC;
+$background-header: #1F2234;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $background-default;
+    color: $text-default;
+    font-family: 'Montserrat', sans-serif;
+    /*font-family: Montserrat;*/
+}
+
+.logo-fork{
+    height: 700px;
+    p{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}
+
+.container-sm {
+    max-width: 900px;
+    margin: 0px auto;
+    width: 100%;
+}
+
+.stripe {
+    background-color: #4C5280;
+    position: absolute;
+    margin-top: -200px;
+    z-index: -1;
+    width: 100%;
+}
+
+.bg-light-fork{
+    background-color: $background-light;
+}
+.bg-dark-fork{
+    background-color: $background-dark;
+}
+.icon-feature{
+    width: 116px;
+    height: 116px;
+}
+.rounded-feature{
+    border-radius: 1rem;
+}
+
+.rounded-bottom-fork {
+    border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.nav-top {
+    height: 20px;
+    background-color: $background-light;
+}
+
+.bg-nav {
+    background-color: $background-header;
+}

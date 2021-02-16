@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "name": "forkgg",
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "sass": "^1.26.9"
+  },
+  "scripts": {
+    "dotnet": "dotnet watch run",
+    "sass": "sass --watch Styles:wwwroot/css",
+    "sass-once": "sass Styles:wwwroot/css"
+  },
+  "author": "",
+  "license": "ISC"
+}

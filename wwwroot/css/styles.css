@@ -1,0 +1,64 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #151622;
+  color: #747AAC;
+  font-family: "Montserrat", sans-serif;
+  /*font-family: Montserrat;*/
+}
+
+.logo-fork {
+  height: 700px;
+}
+.logo-fork p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.container-sm {
+  max-width: 900px;
+  margin: 0px auto;
+  width: 100%;
+}
+
+.stripe {
+  background-color: #4C5280;
+  position: absolute;
+  margin-top: -200px;
+  z-index: -1;
+  width: 100%;
+}
+
+.bg-light-fork {
+  background-color: #747AAC;
+}
+
+.bg-dark-fork {
+  background-color: #20243F;
+}
+
+.icon-feature {
+  width: 116px;
+  height: 116px;
+}
+
+.rounded-feature {
+  border-radius: 1rem;
+}
+
+.rounded-bottom-fork {
+  border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.nav-top {
+  height: 20px;
+  background-color: #747AAC;
+}
+
+.bg-nav {
+  background-color: #1F2234;
+}
+
+/*# sourceMappingURL=styles.css.map */
