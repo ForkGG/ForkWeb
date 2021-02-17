@@ -165,10 +165,20 @@ h1{
     position: absolute;
 }
 
+.carousel-description{
+    margin-top: 4vw; 
+}
+
 @media all and (max-width: 767px){
     .logo-fork{
         p{
             font-size: 3.6vw;
         }
+    }
+}
+
+@media all and (max-width: 991px){
+    .carousel-description{
+        margin-top: 0;
     }
 }

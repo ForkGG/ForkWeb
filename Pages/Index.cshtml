@@ -59,14 +59,14 @@
                 </a>
             </div>
         </div>
-        <div class="col-lg-3 col-12">
-            <div id="screenshotDescriptions">
+        <div class="col-lg-3 col-sm-8 col-10">
+            <div id="screenshotDescriptions" class="text-sm-left carousel-description">
                 @foreach (var screenshot in Model.Screenshots)
                 {
                     int i = Model.Screenshots.IndexOf(screenshot);
                     <div class="@(i == 0 ? "" : "d-none")">
                         <h2>@screenshot.Name</h2>
-                        <p>@screenshot.Path</p>
+                        <p>@screenshot.Description</p>
                     </div>
                 }
             </div>
