@@ -388,3 +388,4 @@ Desktop.ini
 
 # Custom ignores
 .vscode/
+.config/
