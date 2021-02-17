@@ -22,7 +22,15 @@ body {
     /*font-family: Montserrat;*/
 }
 
+.row{
+    max-width: 98vw;
+}
+
 h1{
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+h2{
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
 }
@@ -37,22 +45,25 @@ h1{
 }
 
 .btn{
-    background: transparent;
-    mask-image: url("../img/shapes/button.svg");
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    padding: 5px 35px;
-    fill: #0b2e13;
+    background-color: $btn-primary;
+    padding: 5px 35px; 
     border-radius: 0;
     border: 0;
     font-weight: bold;
     font-size: 1.5rem;
     
     display: inline-block;
+    
+    p{
+        margin: 0;
+    }
 }
 
 .btn-primary {
-    font-size: 2.5rem;
+    padding: 5px 35px 5px 35px;
+    height: 75px;
+    font-size: 2.2rem;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 91% 100%, 0% 100%);
     color: $btn-primary-foreground;
     background-color: $btn-primary;
 }
@@ -62,6 +73,7 @@ h1{
 }
 
 .btn-secondary{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 91% 100%, 0% 100%);
     color: $btn-secondary-foreground;
     background-color: $btn-secondary;
 }
@@ -167,6 +179,13 @@ h1{
 
 .carousel-description{
     margin-top: 4vw; 
+}
+
+#Features{
+    img{
+        height: 120px;
+        
+    }
 }
 
 @media all and (max-width: 767px){

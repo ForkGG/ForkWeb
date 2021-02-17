@@ -1,0 +1,50 @@
+[
+  {
+    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\clean_ui.svg",
+    "Title": "Clean UI",
+    "Description": "Fork focuses on a <b>easy-to-understand</b> and <b>robust</b> user interface for new and experienced users alike.",
+    "IconPath": "/data/features/clean_ui.svg"
+  },
+  {
+    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\free.svg",
+    "Title": "Free",
+    "Description": "No need to whip up your credit card.<br>But if you like the project and want to improve it <a href='https://www.patreon.com/forkgg'>help us cover the costs</a>.",
+    "IconPath": "/data/features/free.svg"
+  },
+  {
+    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\open_source.svg",
+    "Title": "Open Source",
+    "Description": "Missing a feature?<br><a href='https://github.com/ForkGG/Fork'>Source Code</a> for this project is <b>publicly available</b> so come by and add your code.",
+    "IconPath": "/data/features/open_source.svg"
+  },
+  {
+    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\up_to_date.svg",
+    "Title": "Up To Date",
+    "Description": "Fork is always up to date with the <b>newest Minecraft, Paper, etc.</b> releases<br> Let's explore those caves together!",
+    "IconPath": "/data/features/up_to_date.svg"
+  },
+  {
+    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\multiple_servers.svg",
+    "Title": "Multiple Servers",
+    "Description": "Run <b>multiple Minecraft servers at once</b> and combine them into a single network using Waterfall and play with <b>ALL</b> your friends.",
+    "IconPath": "/data/features/multiple_servers.svg"
+  },  
+  {
+    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\plugins.svg",
+    "Title": "Plugins",
+    "Description": "Full support for Paper and we also have a fancy <b>manager for your plugins</b>. Never spend hours to find this one plugin anymore.",
+    "IconPath": "/data/features/plugins.svg"
+  },   
+  {
+    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\windows.svg",
+    "Title": "Windows",
+    "Description": "Fork can <b>only run on Windows</b> but we're also working on solutions to bring Fork to<br> Mac and Linux",
+    "IconPath": "/data/features/windows.svg"
+  },
+  {
+    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\fast_support.svg",
+    "Title": "Fast Support",
+    "Description": "Couldn't run your fancy server?<br>Hop on our <a href='https://discord.fork.gg'>Discord Server</a> and we'll<br> help you out.",
+    "IconPath": "/data/features/fast_support.svg"
+  }
+]

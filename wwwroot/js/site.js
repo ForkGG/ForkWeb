@@ -12,3 +12,7 @@ function switchDescription(from, to){
     descriptions[to].className = "";
 }
 
+function openInNewTab(link){
+    window.open(link, "_blank");
+}
+
