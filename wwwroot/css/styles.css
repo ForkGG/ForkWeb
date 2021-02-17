@@ -32,7 +32,7 @@ body {
 }
 
 .bg-light-fork {
-  background-color: #747AAC;
+  background-color: #292C3D;
 }
 
 .bg-dark-fork {
@@ -54,11 +54,15 @@ body {
 
 .nav-top {
   height: 20px;
-  background-color: #747AAC;
+  background-color: #151622;
 }
 
 .bg-nav {
-  background-color: #1F2234;
+  background-image: url("../img/background/header_bgr.png");
+  background-repeat: no-repeat;
+  background-size: 80% 100%;
+  background-position: center;
+  height: 55px;
 }
 
 /*# sourceMappingURL=styles.css.map */
