@@ -4,67 +4,92 @@
     ViewData["Title"] = "";
 }
 
-<div class="text-center" >
+<div class="text-center">
     @*Icon*@
-    <div class="container" id="Home">
-        <div class="container row justify-content-center align-content-center logo-fork">
-            <img class="col-xl-4 d-none d-xl-block" src="~/img/TitleIcon.png" />
+    <div class="container logo-fork" id="Home">
+        <div class="container row justify-content-center align-content-center">
+            <img class="col-xl-4 d-none d-xl-block" src="~/img/Forky.svg"/>
             <div class="col-xl-8 col-12 d-inline-block align-middle">
                 <span class="d-inline-block align-middle h-100"></span>
                 <div class="d-inline-block align-middle">
-                    <img src="~/img/TitleText.png" class="align-middle" />
-                    <p>A Minecraft Server Manager Tool</p>
+                    <img src="~/img/Title.svg" class="align-middle"/>
+                    <p>Minecraft Server Manager GUI</p>
                 </div>
             </div>
         </div>
-    </div>
-    
-    @*Carousel*@
-    <div id="screenshotCarousel" class="container carousel slide text-center mb-5" data-ride="carousel">
-        <ol class="carousel-indicators">
-            @foreach (var screenshot in Model.Screenshots)
-            {
-                int i = Model.Screenshots.IndexOf(screenshot);
-                <li data-target="#screenshotCarousel" data-slide-to="@i" class="@(i==0 ? "active" : "")"></li>
-            }
-        </ol>
-        <div class="carousel-inner shadow-lg" style="border-radius: 1.5rem;">
-            @foreach (var screenshot in Model.Screenshots)
-            {
-                int i = Model.Screenshots.IndexOf(screenshot);
-                string name = screenshot.Name;
-                <div class="carousel-item @(i==0 ? "active" : "")">
-                    <img class="d-block w-100" src="@screenshot.Path" alt="@name" />
-                </div>
-            }
+        @*Links*@
+        <div>
+            <button type="button" class="btn btn-primary">Download</button>
+            <div class="row justify-content-md-center mt-3">
+                <button type="button" class="btn btn-secondary m-2">Discord</button>
+                <button type="button" class="btn btn-secondary m-2">Patreon</button>
+            </div>
         </div>
-        <a class="carousel-control-prev" href="#screenshotCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#screenshotCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
-    <div style=" height: 200px;" class="stripe">
 
+    @*Screenshots*@
+    <h1>SCREENSHOTS</h1>
+    <div class="row justify-content-center">
+        <div class="carousel-outer col-lg-7 col-10 d-flex justify-content-center align-content-center">
+            <div class="carousel-bgr"></div>
+            <div id="screenshotCarousel" class="carousel slide text-center" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    @foreach (var screenshot in Model.Screenshots)
+                    {
+                        int i = Model.Screenshots.IndexOf(screenshot);
+                        <li data-target="#screenshotCarousel" data-slide-to="@i" class="@(i == 0 ? "active" : "")"></li>
+                    }
+                </ol>
+                <div class="carousel-inner">
+                    @foreach (var screenshot in Model.Screenshots)
+                    {
+                        int i = Model.Screenshots.IndexOf(screenshot);
+                        <div class="carousel-item @(i == 0 ? "active" : "")">
+                            <img src="@screenshot.Path" alt="@screenshot.Name"/>
+                        </div>
+                    }
+                </div>
+                <a class="carousel-control-prev" href="#screenshotCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#screenshotCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-12">
+            <div id="screenshotDescriptions">
+                @foreach (var screenshot in Model.Screenshots)
+                {
+                    int i = Model.Screenshots.IndexOf(screenshot);
+                    <div class="@(i == 0 ? "" : "d-none")">
+                        <h2>@screenshot.Name</h2>
+                        <p>@screenshot.Path</p>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
+
     @*Features*@
-    <div id="Features" style="margin-top: 10rem;" class="container">
+    <div id="Features" class="container mt-5 mt-lg-0">
         <h2><b>Fork</b> offers a ton of useful features for your convenience</h2>
         <div class="container-sm">
             <div class="d-flex flex-wrap">
                 <div class=" bg-dark-fork rounded-feature m-4">
                     <div class="rounded-circle bg-light-fork icon-feature mx-auto m-2 mt-3">
-                        <img />
+                        <img/>
                     </div>
-                    <h3 class="mb-4"><b>Free</b></h3>
+                    <h3 class="mb-4">
+                        <b>Free</b>
+                    </h3>
                     <p class="m-2">
                         Forever.
-                        <br />no need for license,
-                        <br />no need for any stupid subscriptions,
-                        <br />it's Free Real Estate
+                        <br/>no need for license,
+                        <br/>no need for any stupid subscriptions,
+                        <br/>it's Free Real Estate
                     </p>
                 </div>
 
