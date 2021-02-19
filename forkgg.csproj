@@ -3,11 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>40a4f87c-692f-450f-960d-2b6756fe0b24</UserSecretsId>
+    <StartupObject>forkgg.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\css" />
     <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.23.0" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

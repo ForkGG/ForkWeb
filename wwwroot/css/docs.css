@@ -1,5 +1,64 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #151622;
+  color: #8880A0;
+  font-family: "Montserrat", sans-serif;
+  /*font-family: Montserrat;*/
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #E2E3E9;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #747AAC;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #747AAC;
+}
+
 .navbar {
   background-color: #292C3D;
+}
+
+.chapter {
+  margin-bottom: 3px;
+}
+.chapter .title {
+  color: #E2E3E9;
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+.chapter .title:hover {
+  opacity: 1;
+}
+.chapter title.active {
+  opacity: 1;
+}
+.chapter .entry {
+  color: #E2E3E9;
+  padding: 0;
+  margin: 0 0 0 10px;
+  font-size: 1rem;
+  opacity: 0.6;
+}
+.chapter .entry:hover {
+  opacity: 0.9;
+}
+.chapter .entry.active {
+  opacity: 0.9;
 }
 
 .sidebar {
