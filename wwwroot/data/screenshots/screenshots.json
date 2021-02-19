@@ -2,31 +2,26 @@
   {
     "Name": "Terminal Page",
     "Path": "/data/screenshots/aterminal.png",
-    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\screenshots\\aterminal.png",
     "Description": "Control your server with easily accessible settings available on this page. Manage your player, see your server status and run commands in the Minecraft console."
   },
   {
     "Name": "Custom Settings Pages",
     "Path": "/data/screenshots/settings1.png",
-    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\screenshots\\settings1.png",
     "Description": "Configure your server with custom and user-friendly settings pages. This pages automatically verify your inputs and write them to the according configuration files to make your life easier."
   },
   {
     "Name": "Built in Editor",
     "Path": "/data/screenshots/settings2.png",
-    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\screenshots\\settings2.png",
     "Description": "In case some configuration files do not yet have a custom page Fork offers a modern built-in editor so you can change your configuration files without Microsoft Notepad."
   },
   {
     "Name": "Create Page",
     "Path": "/data/screenshots/xcreate.png",
-    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\screenshots\\xcreate.png",
     "Description": "Create servers or even whole proxy networks with a few clicks. Fork always supports the newest versions of each server type and will add even more types in the future."
   },
   {
     "Name": "Import Page",
     "Path": "/data/screenshots/ximport.png",
-    "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\screenshots\\ximport.png",
     "Description": "Already got a Minecraft server set up?\nWe got you: Just tell us where it is on your system and we fully integrate it into Fork for you."
   }
 ]

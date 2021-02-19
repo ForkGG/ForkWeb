@@ -61,7 +61,7 @@ namespace forkgg.Logic
                     List<Feature> finalResult = new List<Feature>();
                     foreach (Feature feature in result)
                     {
-                        if (new FileInfo(feature.FullName).Exists)
+                        if (new FileInfo(Directory.GetCurrentDirectory()+ @"\wwwroot"+ feature.IconPath.Replace("/", @"\")).Exists)
                         {
                             finalResult.Add(feature);
                         }
@@ -90,7 +90,7 @@ namespace forkgg.Logic
                 {
                     result.Add(new Feature
                     {
-                        Title = file.Name, FullName = file.FullName, IconPath = "/data/features/" + file.Name,
+                        Title = file.Name, IconPath = "/data/features/" + file.Name,
                         Description = ""
                     });
                 }

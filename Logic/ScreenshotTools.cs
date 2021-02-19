@@ -65,7 +65,7 @@ namespace forkgg.Logic
                     List<CustomFileInfo> finalResult = new List<CustomFileInfo>();
                     foreach (CustomFileInfo fileInfo in result)
                     {
-                        if (new FileInfo(fileInfo.FullName).Exists)
+                        if (new FileInfo(Directory.GetCurrentDirectory()+ @"\wwwroot"+ fileInfo.Path.Replace("/", @"\")).Exists)
                         {
                             finalResult.Add(fileInfo);
                         }
@@ -94,7 +94,7 @@ namespace forkgg.Logic
                 {
                     result.Add(new CustomFileInfo
                     {
-                        Name = file.Name, FullName = file.FullName, Path = "/data/screenshots/" + file.Name,
+                        Name = file.Name, Path = "/data/screenshots/" + file.Name,
                         Description = ""
                     });
                 }
