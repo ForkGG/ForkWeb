@@ -1,0 +1,30 @@
+﻿@page
+@model forkgg.Pages.Docs
+@{
+    ViewData["Title"] = "Docs - Fork";
+}
+
+<link rel="stylesheet" href="~/css/docs.css"/>
+
+<div class="container-fluid">
+    <nav class="navbar navbar-dark fixed-top ">
+        <a class="nav-item nav-link" asp-area="" asp-page="Index"><i class="fas fa-arrow-circle-left mr-2"></i>Back to Fork</a>
+        Fork Documentation
+    </nav>
+    <div class="row">
+        @*Sidebar*@
+        <nav class="col-3 col-md-2 sidebar">
+            <div class="nav flex-column">
+                <a class="nav-item nav-link">test</a>
+                <a class="nav-item nav-link">test1</a>
+                <a class="nav-item nav-link">test2</a>
+                <a class="nav-item nav-link">test3</a>
+            </div>
+        </nav>
+        <div class="col-9 col-md-10 content-host">
+            <div>
+                
+            </div>
+        </div>
+    </div>
+</div>

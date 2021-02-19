@@ -8,13 +8,13 @@
   {
     "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\free.svg",
     "Title": "Free",
-    "Description": "No need to whip up your credit card.<br>But if you like the project and want to improve it <a href='https://www.patreon.com/forkgg'>help us cover the costs</a>.",
+    "Description": "No need to whip up your credit card.<br>But if you like the project and want to improve it <a href='https://www.patreon.com/forkgg' target='_blank'>help us cover the costs</a>.",
     "IconPath": "/data/features/free.svg"
   },
   {
     "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\open_source.svg",
     "Title": "Open Source",
-    "Description": "Missing a feature?<br><a href='https://github.com/ForkGG/Fork'>Source Code</a> for this project is <b>publicly available</b> so come by and add your code.",
+    "Description": "Missing a feature?<br><a href='https://github.com/ForkGG/Fork' target='_blank'>Source Code</a> for this project is <b>publicly available</b> so come by and add your code.",
     "IconPath": "/data/features/open_source.svg"
   },
   {
@@ -44,7 +44,7 @@
   {
     "FullName": "C:\\Users\\chris\\source\\repos\\Web\\forkgg\\wwwroot\\data\\features\\fast_support.svg",
     "Title": "Fast Support",
-    "Description": "Couldn't run your fancy server?<br>Hop on our <a href='https://discord.fork.gg'>Discord Server</a> and we'll<br> help you out.",
+    "Description": "Couldn't run your fancy server?<br>Hop on our <a href='https://discord.fork.gg' target='_blank'>Discord Server</a> and we'll<br> help you out.",
     "IconPath": "/data/features/fast_support.svg"
   }
 ]

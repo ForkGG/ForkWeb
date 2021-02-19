@@ -2,8 +2,21 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
+setScreenshotDescriptionHeight();
+$(window).on('resize', function(){
+    setScreenshotDescriptionHeight();
+})
+
 $('#screenshotCarousel').on('slide.bs.carousel', function(a){
     switchDescription(a.from, a.to);
+});
+
+$(function(){
+    $(window).scroll(function(){
+        if(!$('#nav-toggle').hasClass("collapsed")){
+            $('.collapse').collapse('hide');
+        }
+    });
 });
 
 function switchDescription(from, to){
@@ -15,4 +28,32 @@ function switchDescription(from, to){
 function openInNewTab(link){
     window.open(link, "_blank");
 }
+
+function setScreenshotDescriptionHeight(){
+    let maxHeight = 0;
+    let descDiv = $('#screenshotDescriptions');
+    descDiv.children().each(function(){
+        if (this.clientHeight > maxHeight)
+            maxHeight = this.clientHeight;
+    });
+    console.log("Max height of descriptions is "+maxHeight);
+    descDiv.height(maxHeight);
+}
+
+
+
+function LoadImages(){
+    console.log("loading images");
+    $('img[lazysrc]').each( function(){
+            //* set the img src from data-src
+            $( this ).attr( 'src', $( this ).attr( 'lazysrc' ) );
+        }
+    );
+}
+
+document.addEventListener('readystatechange', event => {
+    if (event.target.readyState === "interactive") {  //or at "complete" if you want it to execute in the most last state of window.
+        LoadImages();
+    }
+});
 

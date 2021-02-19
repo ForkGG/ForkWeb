@@ -1,68 +1,57 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewData["Title"]Fork Minecraft Server Manager</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/styles.css" />
+    @*Google analytics*@
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166838212-1"></script>
+    <script>
+    	window.dataLayer = window.dataLayer || [];
+    	function gtag(){dataLayer.push(arguments);}
+    	gtag('js', new Date());
+    
+    	gtag('config', 'UA-166838212-1');
+    </script>
+    
+    @*Meta tags*@
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="Description" content="A free and OpenSource Minecraft server GUI designed to make server hosting easy, clean and fast. Features allow automatic server restartss, hardware statistics like CPU usage, player management and much more...">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@@fork_gg">
+	<meta name="twitter:title" content="Fork - Minecraft Server Manager GUI">
+	<meta name="twitter:description" content="A free and OpenSource Minecraft server GUI designed to make server hosting easy, clean and fast. Features allow automatic server restarts, hardware statistics, player management and more">
+	<meta name="twitter:image:src" content="https://www.fork.gg/assets/images/card.png"> 
+	<!-- Open Graph data -->
+	<meta property="og:title" content="Fork - Minecraft Server Manager GUI" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.fork.gg" />
+	<meta property="og:image" content="https://www.fork.gg/assets/images/card.png" />
+	<meta property="og:description" content="A free and OpenSource Minecraft server GUI designed to make server hosting easy, clean and fast. Features allow automatic server restarts, hardware statistics, player management and more" />
+
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/styles.css"/>
     <link rel="stylesheet" href="~/lib/fontawesome/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;display=swap" rel="stylesheet">
-    <!--link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"-->
-    <!--script src="https://use.fontawesome.com/3a3422d927.js"></script-->
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="300">
-    <header>
-        <div class="container fixed-top">
-            <div class="bg-nav">
-                <nav class="navbar navbar-dark navbar-expand-md navbar-toggleable-md">
-                    <div class="container align-content-center">
-                        <a class="navbar-brand d-md-none">Fork</a>
-                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="navbar-collapse collapse d-md-inline-flex flex-md-row-reverse">
-                            <ul class="navbar-nav flex-grow-1 justify-content-center ">
-                                <!--li class="nav-item ml-1 mr-1">
-                                    <a class="nav-link" href="#Home">Home</a>
-                                </li-->
-                                <li class="nav-item ml-1 mr-1">
-                                    <a class="nav-link font-weight-bold" href="#Features">FEATURES</a>
-                                </li>
-                                <li class="nav-item ml-1 mr-1">
-                                    <a class="nav-link font-weight-bold" asp-area="">DOWNLOAD</a>
-                                </li>
-                                <li class="nav-item ml-1 mr-1">
-                                    <a class="nav-link font-weight-bold" asp-area="">FAQ</a>
-                                </li>
-                                <!--li class="nav-item ml-1 mr-1">
-                                    <a class="nav-link" asp-area="">Wiki</a>
-                                </li-->
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <div>
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+<header>
+    
+</header>
+<div>
+    <main role="main">
+        @RenderBody()
+    </main>
+</div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - forkgg - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 
-    <script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<script>
         $(document).ready(function () {
             // Add smooth scrolling to all links
             $("a").on('click', function (event) {
@@ -89,6 +78,6 @@
         });
     </script>
 
-    @RenderSection("Scripts", required: false)
+@RenderSection("Scripts", required: false)
 </body>
 </html>

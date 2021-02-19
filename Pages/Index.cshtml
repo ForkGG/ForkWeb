@@ -1,13 +1,57 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "";
+    ViewData["Title"] = "Fork - Minecraft Server Manager";
 }
 
-<div class="text-center">
+<div class="text-center container-fluid">
+    @*Navigation*@
+    <div class="fixed-top">
+        <div class="bg-nav">
+            <nav class="navbar navbar-dark navbar-expand-md navbar-toggleable-md mt-2">
+                <div class="container align-content-center">
+                    <a class="navbar-brand d-none">Fork</a>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation" id="nav-toggle">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-md-inline-flex flex-md-row-reverse row justify-content-md-center">
+                        <div class="navbar-nav flex-grow-1 justify-content-md-center col-xl-10 col-md-12 col-sm-3 col-5">
+                            <a class="nav-item nav-link font-weight-bold pl-3 pr-3 d-flex align-items-center" href="#Home">
+                                <div>
+                                    <p>FORK</p>
+                                </div>
+                            </a>
+                            <a class="nav-item nav-link font-weight-bold pl-3 pr-3 d-flex align-items-center" href="#Features">
+                                <div>
+                                    <p>FEATURES</p>
+                                </div>
+                            </a>
+                            <a class="nav-item nav-link font-weight-bold pl-3 pr-3 d-flex align-items-center" href="#Download">
+                                <div>
+                                    <p>DOWNLOAD</p>
+                                </div>
+                            </a>
+                            <a class="nav-item nav-link font-weight-bold pl-3 pr-3 d-flex align-items-center" href="#FAQ">
+                                <div>
+                                    <p>FAQ</p>
+                                </div>
+                            </a>
+                            <a class="nav-item nav-link font-weight-bold pl-3 pr-3 d-flex align-items-center" asp-area="" asp-page="/Docs">
+                                <div>
+                                    <p>DOCS<i class="fas fa-external-link-alt ml-2"></i></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
     @*Icon*@
     <div class="container logo-fork" id="Home">
-        <div class="container row justify-content-center align-content-center">
+        <div class="row justify-content-center align-content-center">
             <img class="col-xl-4 d-none d-xl-block" src="~/img/Forky.svg"/>
             <div class="col-xl-8 col-12 d-inline-block align-middle">
                 <span class="d-inline-block align-middle h-100"></span>
@@ -56,7 +100,7 @@
                     {
                         int i = Model.Screenshots.IndexOf(screenshot);
                         <div class="carousel-item @(i == 0 ? "active" : "")">
-                            <img src="@screenshot.Path" alt="@screenshot.Name"/>
+                            <img lazysrc="@screenshot.Path" alt="@screenshot.Name"/>
                         </div>
                     }
                 </div>
@@ -70,14 +114,14 @@
                 </a>
             </div>
         </div>
-        <div class="col-lg-2 col-sm-8 col-10">
-            <div id="screenshotDescriptions" class="text-sm-left carousel-description">
+        <div class="col-lg-3 col-sm-8 col-10 m-3 m-lg-0">
+            <div id="screenshotDescriptions" class="text-lg-left carousel-description">
                 @foreach (var screenshot in Model.Screenshots)
                 {
                     int i = Model.Screenshots.IndexOf(screenshot);
                     <div class="@(i == 0 ? "" : "d-none")">
                         <h2>@screenshot.Name</h2>
-                        <p>@Html.Raw(screenshot.Description.Replace("\n","<br>"))</p>
+                        <p>@Html.Raw(screenshot.Description.Replace("\n", "<br>"))</p>
                     </div>
                 }
             </div>
@@ -85,22 +129,90 @@
     </div>
 
     @*Features*@
-    <div id="Features" class="mt-5">
+    <div id="Features" class="mt-5 container-fluid">
         <h1>FEATURES</h1>
         <div class="row align-content-center justify-content-center mt-5">
             @foreach (var feature in Model.Features)
             {
-                <div class="col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4 row mr-4 ml-4 mb-4">
-                    <div class="col-8 text-right">
+                <div class="col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4 row mr-4 ml-4 mb-4 justify-content-center">
+                    <div class="feature-icon-host col-6 d-flex flex-wrap align-items-center justify-content-center d-sm-none mb-5 mt-4">
+                        <div class="feature-icon-bgr"></div>
+                        <img src="@feature.IconPath" style="@(feature.Title == "Clean UI" ? "margin-bottom: 15%;margin-right: 15%; width: 60%;" : "")"/>
+                    </div>
+                    <div class="col-10 col-sm-8 text-sm-right text-center">
                         <h2>@feature.Title</h2>
                         <p>@Html.Raw(feature.Description)</p>
                     </div>
-                    <div class="col-4 col-xl-3 d-flex flex-wrap align-items-center">
-                        <img src="@feature.IconPath"/>
+                    <div class="feature-icon-host col-4 col-xl-3 flex-wrap align-items-center justify-content-center d-none d-sm-flex">
+                        <div class="feature-icon-bgr"></div>
+                        <img src="@feature.IconPath" style="@(feature.Title == "Clean UI" ? "margin-bottom: 15%;margin-right: 15%; width: 60%;" : "")"/>
                     </div>
                 </div>
-                
+            }
+        </div>
+    </div>
+
+    @*Download*@
+    <div id="Download" class="mt-5">
+        <h1>GET FORK</h1>
+        <div class="container align-content-center justify-content-center mt-5">
+            <button type="button" class="btn btn-primary d-none d-md-inline">
+                <span>
+                    <p class="d-inline-block">Download</p>
+                    <i class="fa fa-download ml-2"></i>
+                </span>
+            </button>
+            @*System requirements*@
+            <div class="row justify-content-center">
+                <div class="mt-5 text-left col-12 col-lg-5">
+                    <h2>System Requirements</h2>
+                    <div class="">
+                        <ul>
+                            <li>Windows 8.1 or Windows 10 Version 1607 or later (64bit)</li>
+                            <li>Windows Server 2016 or later (64bit)</li>
+                            <li>Windows Server Nano Version 1809 or later (64bit)</li>
+                        </ul>
+                    </div>
+                </div>
+                @*Latest Update*@
+                <div class="mt-5 text-left col-12 col-lg-5">
+                    <h2>Latest Update</h2>
+                    <div class="">
+                        <ul>
+                            <li>Added Java detection and warnings</li>
+                            <li>Added feature to start server with Fork</li>
+                            <li>Added Resource Pach and Server Icon support</li>
+                            <li>Performance improvements</li>
+                            <li>Lots of smaller Bugfixes (Thanks to the Discord Bughunters)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*FAQ*@
+    <div id="FAQ" class="mt-5 container mb-5">
+        <h1>FAQ</h1>
+        <div class="row justify-content-center text-left">
+            @foreach (var faq in Model.Faqs)
+            {
+                <div class="w-100 faq-item-host mt-4 mb-4 col-10">
+                    <h3>@Html.Raw(faq.Question)</h3>
+                    <p>@Html.Raw(faq.Answer)</p>
+                </div>
             }
         </div>
     </div>
 </div>
+
+<footer class="footer pt-4 pb-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <a class="mr-3 ml-3" href="https://github.com/ForkGG" target="_blank">GitHub</a>
+            <a class="mr-3 ml-3" href="https://discord.fork.gg" target="_blank">Discord</a>
+            <a class="mr-3 ml-3" href="https://twitter.com/fork_gg" target="_blank">Twitter</a>
+            <a class="mr-3 ml-3" href="mailto:contact@fork.gg" target="_blank">Mail</a>
+        </div>
+    </div>
+</footer>

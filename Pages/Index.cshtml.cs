@@ -16,6 +16,7 @@ namespace forkgg.Pages
         private readonly ILogger<IndexModel> _logger;
         public List<CustomFileInfo> Screenshots => ScreenshotTools.Instance.Screenshots;
         public List<Feature> Features => FeatureTools.Instance.Features;
+        public List<Faq> Faqs => FaqTools.Instance.FaqList;
 
         public IndexModel(ILogger<IndexModel> logger)
         {

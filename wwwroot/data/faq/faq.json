@@ -1,0 +1,26 @@
+[
+    {
+        "Question":"What exactly is Fork?",
+        "Answer":"Fork is a server wrapper or server GUI manager for Minecraft. It helps you to create, configure and manage your Minecraft server super easy."
+    },
+    {
+        "Question":"Why is Fork Windows only?",
+        "Answer":"Fork targets casual Minecraft player like you and Windows has the highest userbase. But we also work on some fancy magic to make Fork available on Mac and Linux."
+    },
+    {
+        "Question":"How do i use Fork?",
+        "Answer":"Just download and run the Fork Launcher. It should be pretty self-explanatory, but we will setup a documentation in the future. For now you can just ask your questions on our <a href='https://discord.fork.gg' target='_blank'>Discord</a>."
+    },
+    {
+        "Question":"Why is Fork free?",
+        "Answer":"We believe that free OpenSource projects profit everyone in the Minecraft community. <br>If you like the project support us on <a href='https://www.patreon.com/forkgg' target='_blank'>Patreon</a>."
+    },
+    {
+        "Question":"Can Fork servers run 24/7?",
+        "Answer":"Technically, yes. But your PC has to be running 24/7 as well. You will still be home hosting your server we're just making it easy for you."
+    },
+    {
+        "Question":"What is port forwarding?",
+        "Answer":"To allow players from outside your house to join your servers, you probably have to forward the servers ports.<br><a href='https://portforward.com/router.htm' target='_blank'>How to do this</a>"
+    }    
+]

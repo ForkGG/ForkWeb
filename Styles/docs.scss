@@ -1,0 +1,21 @@
+﻿@import "colors";
+
+.navbar{
+  background-color: $background-light;
+}
+
+.sidebar{
+  background-color: rgba($background-light, .8);
+  position: sticky;
+  top: 56px;
+  margin: 0;
+  padding-top: .5rem;
+  height: calc(100vh - 56px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.content-host{
+  margin-top: 56px;
+  min-height: calc(100vh - 56px);
+}
