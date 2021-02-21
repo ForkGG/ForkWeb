@@ -27,6 +27,10 @@ h3 {
   color: #747AAC;
 }
 
+.container-fluid {
+  max-width: 1900px !important;
+}
+
 .logo-fork {
   margin-top: 150px;
   margin-bottom: 100px;
@@ -118,14 +122,19 @@ h3 {
 }
 
 .carousel {
-  margin: 4vw 0 6vw 0;
+  margin: min(4vw, 75px) 0 min(6vw, 115px) 0;
   width: 65%;
+}
+@media all and (max-width: 460px) {
+  .carousel {
+    margin: min(2vw, 75px) 0 min(2vw, 115px) 0;
+  }
 }
 .carousel .carousel-item img {
   width: 100%;
 }
 .carousel .carousel-control-prev {
-  left: -4vw;
+  left: max(-4vw, -75px);
   opacity: 1;
 }
 .carousel .carousel-control-prev :hover {
@@ -140,7 +149,7 @@ h3 {
   height: 60px;
 }
 .carousel .carousel-control-next {
-  right: -4vw;
+  right: max(-4vw, -75px);
   opacity: 1;
 }
 .carousel .carousel-control-next :hover {
@@ -155,7 +164,7 @@ h3 {
   height: 60px;
 }
 .carousel .carousel-indicators {
-  bottom: -3vw;
+  bottom: max(-3vw, -57px);
 }
 .carousel .carousel-indicators li {
   background-image: url("../img/shapes/carousel-indicator.svg");
