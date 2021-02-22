@@ -24,5 +24,6 @@ As per the version, we can also choose it freely. The rest of the config will be
 Now that we&apos;re done, let&apos;s hit the green anvil button ![](https://i.imgur.com/cyJgEsP.png) to finish making the server. 
 
 _And voilà!_ We&apos;ve finished our server and hitted start and it&apos;s running. Good Job!
+
 ![](https://i.imgur.com/BiMKJma.png)
 
