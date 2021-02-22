@@ -1,0 +1,5 @@
+General Advice
+Fork Server Settings
+Vanilla Configuration
+Paper Configuration
+Waterfall Configuration

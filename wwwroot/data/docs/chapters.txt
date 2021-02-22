@@ -1,2 +1,6 @@
 Introduction
-Getting Started
+First Steps
+Create Server
+Server Configuration
+Fork Configuration
+Frequent Questions

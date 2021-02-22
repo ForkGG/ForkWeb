@@ -39,12 +39,12 @@ namespace forkgg.Logic
 
             foreach (string chapter in chapters)
             {
-                if (string.IsNullOrEmpty(chapter) || !chapterDirs.Any(dir => dir.Name.Equals(chapter)))
+                if (string.IsNullOrEmpty(chapter) || !chapterDirs.Any(dir => dir.Name.ToLower().Equals(chapter.ToLower())))
                 {
                     Console.WriteLine("No directory found for chapter: "+chapter);
                     continue;
                 }
-                DirectoryInfo chapterDir = chapterDirs.First(dir => dir.Name.Equals(chapter));
+                DirectoryInfo chapterDir = chapterDirs.First(dir => dir.Name.ToLower().Equals(chapter.ToLower()));
                 try
                 {
                     DocChapter docChapter = ConstructChapter(chapterDir);
@@ -83,12 +83,12 @@ namespace forkgg.Logic
             IEnumerable<string> entryNames = File.ReadAllLines(Path.Combine(chapterDir.FullName, "entries.txt"));
             foreach (string entryName in entryNames)
             {
-                if (string.IsNullOrEmpty(entryName) || !entryFiles.Any(dir => dir.Name.ToLower().Equals(entryName+".md")))
+                if (string.IsNullOrEmpty(entryName) || !entryFiles.Any(dir => dir.Name.ToLower().Equals(entryName.ToLower()+".md")))
                 {
                     Console.WriteLine("No file found for chapter: "+entryName);
                     continue;
                 }
-                FileInfo entryFile = entryFiles.First(dir => dir.Name.ToLower().Equals(entryName+".md"));
+                FileInfo entryFile = entryFiles.First(dir => dir.Name.ToLower().Equals(entryName.ToLower()+".md"));
                 try
                 {
                     DocEntry docEntry = ConstructEntry(entryFile);
