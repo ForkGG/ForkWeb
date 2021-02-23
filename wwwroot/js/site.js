@@ -98,8 +98,8 @@ let mut = new MutationObserver(function(mutations, mut){
                    if($(this).hasClass('active'))
                        $(this).removeClass('active');
                 });
-                
-                mutation.target.parentElement.setAttribute("class", "chapter active");
+                $(mutation.target.parentElement).addClass('active');
+                //mutation.target.parentElement.setAttribute("class", "chapter active");
             }
         }
     }

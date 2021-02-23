@@ -18,7 +18,7 @@
                 <div>
                     @foreach (var chapter in Model.Chapters)
                     {
-                        <div class="chapter">
+                        <div class="chapter mb-3">
                             <a href="#@chapter.Name.Replace(" ","-")" class="nav-item nav-link title">@chapter.Name</a>
                             @foreach (var entry in chapter.Entries)
                             {
