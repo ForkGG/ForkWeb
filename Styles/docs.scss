@@ -95,5 +95,15 @@ h3{
 
 .content-host{
   margin-top: 56px;
-  min-height: calc(100vh - 56px);
+}
+
+.chapter-content{
+  //padding-top: 60px;
+}
+
+:target::before {
+  content: "";
+  display: block;
+  height: 60px; /* fixed header height*/
+  margin: -60px 0 0; /* negative fixed header height */
 }
