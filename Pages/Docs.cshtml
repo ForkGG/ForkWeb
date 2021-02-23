@@ -33,16 +33,16 @@
         <div class="col-9 col-md-10 content-host">
             @foreach (var chapter in Model.Chapters)
             {
-                <div class="chapter-content">
+                <div class="chapter-content ml-5">
                     @if (!string.IsNullOrEmpty(chapter.ContentHtml))
                     {
-                        <div id="@chapter.Name.Replace(" ","-")">
+                        <div id="@chapter.Name.Replace(" ", "-")">
                             @Html.Raw(chapter.ContentHtml)
                         </div>
                     }
                     @foreach (var entry in chapter.Entries)
                     {
-                        <div id="@entry.Name.Replace(" ","-")">
+                        <div id="@entry.Name.Replace(" ", "-")">
                             @Html.Raw(entry.ContentHtml)
                         </div>
                     }

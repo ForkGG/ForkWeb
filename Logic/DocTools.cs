@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using forkgg.Logic.Model.Docs;
 using Markdig;
+using Markdig.Extensions.Tables;
+using Markdig.Renderers;
+using Markdig.Syntax;
 
 namespace forkgg.Logic
 {
@@ -111,8 +114,27 @@ namespace forkgg.Logic
         private DocFileContent ReadFileContent(FileInfo fileInfo)
         {
             string md = File.ReadAllText(fileInfo.FullName);
-            string html = Markdown.ToHtml(md, pipeline);
+            string html = CreateHtmlFromMd(md);
             return new DocFileContent {Md = md, Html = html};
+        }
+
+        private string CreateHtmlFromMd(string md)
+        {
+            MarkdownDocument doc = Markdown.Parse(md, pipeline);
+            foreach (var table in doc.Descendants<Table>())
+            {
+                
+                foreach (TableColumnDefinition definition in table.ColumnDefinitions)
+                {
+                    definition.Alignment = TableColumnAlign.Left;
+                }
+            }
+            
+            var writer = new StringWriter();
+            var renderer = new HtmlRenderer(writer);
+            pipeline.Setup(renderer);
+            renderer.Render(doc);
+            return writer.ToString();
         }
         
         

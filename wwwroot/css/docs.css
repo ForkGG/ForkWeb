@@ -86,6 +86,7 @@ h3 {
   position: sticky;
   top: 56px;
   margin: 0;
+  padding-left: 25px;
   padding-top: 0.5rem;
   height: calc(100vh - 56px);
   overflow-x: hidden;
@@ -94,6 +95,69 @@ h3 {
 
 .content-host {
   margin-top: 56px;
+}
+
+.chapter-content {
+  max-width: 1000px;
+}
+.chapter-content h1 {
+  text-align: center;
+  color: #E2E3E9;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.chapter-content h2 {
+  margin-top: 10px;
+  color: #747AAC;
+  font-weight: bold;
+}
+.chapter-content h3 {
+  margin-top: 5px;
+  margin-left: 15px;
+  color: #747AAC;
+  font-weight: normal;
+  font-style: italic;
+}
+.chapter-content code {
+  color: #E54A97;
+}
+.chapter-content p {
+  margin-left: 30px;
+}
+.chapter-content pre {
+  margin-left: 35px;
+  margin-right: 35px;
+  padding: 3px 10px;
+  background-color: #1D2030;
+  position: relative;
+}
+.chapter-content ul {
+  margin-left: 30px;
+}
+.chapter-content img {
+  max-height: 300px;
+}
+.chapter-content .table-div {
+  margin: 0 35px;
+}
+.chapter-content .table-div table th, .chapter-content .table-div table td {
+  border: 0;
+}
+.chapter-content .table-div table thead {
+  background-color: #292C3D;
+}
+.chapter-content .table-div table thead tr th {
+  padding-left: 20px;
+  font-weight: normal;
+  font-size: 1.3rem;
+  color: #94959E;
+}
+.chapter-content .table-div table tbody {
+  background-color: #1D2030;
+}
+.chapter-content .table-div table tbody tr td {
+  color: #747AAC;
+  padding-left: 50px;
 }
 
 :target::before {

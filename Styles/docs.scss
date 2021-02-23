@@ -87,6 +87,7 @@ h3{
   position: sticky;
   top: 56px;
   margin: 0;
+  padding-left: 25px;
   padding-top: .5rem;
   height: calc(100vh - 56px);
   overflow-x: hidden;
@@ -98,7 +99,68 @@ h3{
 }
 
 .chapter-content{
-  //padding-top: 60px;
+  max-width: 1000px;
+  h1{
+    text-align: center;
+    color: $text-header;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  h2{
+    margin-top: 10px;
+    color: $text-smolheader;
+    font-weight: bold;
+  }
+  h3{
+    margin-top: 5px;
+    margin-left: 15px;
+    color: $text-smolheader;
+    font-weight: normal;
+    font-style: italic;
+  }
+  code{
+    color: $text-code;
+  }
+  p{
+    margin-left: 30px;
+  }
+  pre{
+    margin-left: 35px;
+    margin-right: 35px;
+    padding: 3px 10px;
+    background-color: $background-lighter;
+    position: relative;
+  }
+  ul{
+    margin-left: 30px;
+  }
+  img{
+    max-height: 300px;
+  }
+  .table-div{
+    margin: 0 35px;
+    table{
+      th, td{
+        border: 0;
+      }
+      thead{
+        background-color: $background-light;
+        tr th{
+          padding-left: 20px;
+          font-weight: normal;
+          font-size: 1.3rem;
+          color: #94959E;
+        }
+      }
+      tbody{
+        background-color: $background-lighter;
+        tr td{
+          color: $text-smolheader;
+          padding-left: 50px;
+        }
+      }
+    }
+  }
 }
 
 :target::before {
