@@ -7,24 +7,22 @@
 <link rel="stylesheet" href="~/css/docs.css"/>
 
 <div id="docBody" class="container-fluid">
-    <nav class="navbar navbar-dark fixed-top ">
+    <nav class="navbar fixed-top ">
         <a class="nav-item nav-link" asp-area="" asp-page="Index"><i class="fas fa-arrow-circle-left mr-2"></i>Back to Fork</a>
         Fork Documentation
     </nav>
     <div class="row">
         @*Sidebar*@
         <nav class="col-3 col-md-2 sidebar">
-            <div class="flex-column">
+            <div class="flex-column navbar align-items-baseline navbar-dark">
                 <div>
                     @foreach (var chapter in Model.Chapters)
                     {
-                        string chapId = Model.Chapters.IndexOf(chapter).ToString();
                         <div class="chapter">
-                            <a href="#@chapId" class="nav-item nav-link title">@chapter.Name</a>
+                            <a href="#@chapter.Name.Replace(" ","-")" class="nav-item nav-link title">@chapter.Name</a>
                             @foreach (var entry in chapter.Entries)
                             {
-                                string entryId = chapId +"."+ chapter.Entries.IndexOf(entry);
-                                <a href="#@entryId" class="nav-item nav-link entry">@entry.Name</a>
+                                <a href="#@entry.Name.Replace(" ","-")" class="nav-item nav-link entry">@entry.Name</a>
                             }
                         </div>
                     }
@@ -34,18 +32,16 @@
         <div class="col-9 col-md-10 content-host">
             @foreach (var chapter in Model.Chapters)
             {
-                string chapId = Model.Chapters.IndexOf(chapter).ToString();
                 <div class="chapter-content">
                     @if (!string.IsNullOrEmpty(chapter.ContentHtml))
                     {
-                        <div id="@chapId">
+                        <div id="@chapter.Name.Replace(" ","-")">
                             @Html.Raw(chapter.ContentHtml)
                         </div>
                     }
                     @foreach (var entry in chapter.Entries)
                     {
-                        string entryId = chapId + "." + chapter.Entries.IndexOf(entry);
-                        <div id="@entryId">
+                        <div id="@entry.Name.Replace(" ","-")">
                             @Html.Raw(entry.ContentHtml)
                         </div>
                     }

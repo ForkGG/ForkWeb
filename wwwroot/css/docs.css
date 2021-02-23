@@ -31,8 +31,13 @@ h3 {
   background-color: #292C3D;
 }
 
+.navbar-dark {
+  background-color: rgba(41, 44, 61, 0);
+}
+
 .chapter {
   margin-bottom: 3px;
+  position: relative;
 }
 .chapter .title {
   color: #E2E3E9;
@@ -44,7 +49,7 @@ h3 {
 .chapter .title:hover {
   opacity: 1;
 }
-.chapter title.active {
+.chapter .title.active {
   opacity: 1;
 }
 .chapter .entry {
@@ -59,6 +64,22 @@ h3 {
 }
 .chapter .entry.active {
   opacity: 0.9;
+}
+
+.chapter:before {
+  content: "";
+  background-color: rgba(226, 227, 233, 0.6);
+  clip-path: polygon(0 0, 100% 0, 100% 15px, 40% 18px, 40% 100%, 0% 100%);
+  width: 10px;
+  height: calc(100% - 5px);
+  left: 0;
+  margin-left: -15px;
+  margin-top: 5px;
+  position: absolute;
+}
+
+.chapter.active:before {
+  background-color: #e2e3e9;
 }
 
 .sidebar {

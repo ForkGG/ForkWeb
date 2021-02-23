@@ -1,38 +1,41 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    @*Google analytics*@
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166838212-1"></script>
-    <script>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+	@*Google analytics*@
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166838212-1"></script>
+	<script>
     	window.dataLayer = window.dataLayer || [];
     	function gtag(){dataLayer.push(arguments);}
     	gtag('js', new Date());
     
     	gtag('config', 'UA-166838212-1');
     </script>
-    
-    @*Meta tags*@
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="Description" content="A free and OpenSource Minecraft server GUI designed to make server hosting easy, clean and fast. Features allow automatic server restartss, hardware statistics like CPU usage, player management and much more...">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Twitter Card data -->
+
+	@*Meta tags*@
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="Description" content="A free and OpenSource Minecraft server GUI designed to make server hosting easy, clean and fast. Features allow automatic server restartss, hardware statistics like CPU usage, player management and much more...">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- Twitter Card data -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@@fork_gg">
 	<meta name="twitter:title" content="Fork - Minecraft Server Manager GUI">
 	<meta name="twitter:description" content="A free and OpenSource Minecraft server GUI designed to make server hosting easy, clean and fast. Features allow automatic server restarts, hardware statistics, player management and more">
-	<meta name="twitter:image:src" content="https://www.fork.gg/assets/images/card.png"> 
+	<meta name="twitter:image:src" content="https://www.fork.gg/assets/images/card.png">
 	<!-- Open Graph data -->
-	<meta property="og:title" content="Fork - Minecraft Server Manager GUI" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://www.fork.gg" />
-	<meta property="og:image" content="https://www.fork.gg/assets/images/card.png" />
-	<meta property="og:description" content="A free and OpenSource Minecraft server GUI designed to make server hosting easy, clean and fast. Features allow automatic server restarts, hardware statistics, player management and more" />
+	<meta property="og:title" content="Fork - Minecraft Server Manager GUI"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="https://www.fork.gg"/>
+	<meta property="og:image" content="https://www.fork.gg/assets/images/card.png"/>
+	<meta property="og:description" content="A free and OpenSource Minecraft server GUI designed to make server hosting easy, clean and fast. Features allow automatic server restarts, hardware statistics, player management and more"/>
 
-    <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/lib/fontawesome/css/all.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;display=swap" rel="stylesheet">
+	<title>@ViewData["Title"]</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="~/lib/fontawesome/css/all.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;display=swap" rel="stylesheet">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="300">
 <header>
@@ -44,37 +47,8 @@
     </main>
 </div>
 
-
-
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-
 <script>
-        $(document).ready(function () {
-            // Add smooth scrolling to all links
-            $("a").on('click', function (event) {
-
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
-
-                    // Store hash
-                    var hash = this.hash;
-
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top -150
-                    }, 500, function () {
-
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        //window.location.hash = hash;
-                    });
-                } // End if
-            });
-        });
+        
     </script>
 
 @RenderSection("Scripts", required: false)

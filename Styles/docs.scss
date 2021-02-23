@@ -31,9 +31,13 @@ h3{
 .navbar{
   background-color: $background-light;
 }
+.navbar-dark{
+  background-color: rgba($background-light, 0);
+}
 
 .chapter{
-  margin-bottom: 3px;  
+  margin-bottom: 3px;
+  position: relative;
   .title{
     color: $text-header;
     margin: 0;
@@ -45,7 +49,7 @@ h3{
   .title:hover{
     opacity: 1;
   }
-  title.active{
+  .title.active{
     opacity: 1;
   }
   
@@ -62,6 +66,22 @@ h3{
   .entry.active{
     opacity: .9;
   }
+}
+
+.chapter:before{
+  content: "";
+  background-color: rgba($text-header, .6);
+  clip-path: polygon(0 0, 100% 0, 100% 15px, 40% 18px, 40% 100%, 0% 100%);
+  width: 10px;
+  height: calc(100% - 5px);
+  left: 0;
+  margin-left: -15px;
+  margin-top: 5px;
+  position: absolute;
+}
+
+.chapter.active:before{
+  background-color: rgba($text-header, 1);
 }
 
 .sidebar{
