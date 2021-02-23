@@ -42,16 +42,17 @@ h3 {
 }
 
 .chapter {
-  margin-bottom: 3px;
+  margin-bottom: 0px;
   position: relative;
 }
 .chapter .title {
   color: #E2E3E9;
-  padding: 0;
+  padding: 0 0 0 15px;
   font-weight: bold;
   font-size: 1.1rem;
   opacity: 0.8;
   margin-right: -15px;
+  margin-left: -15px;
   position: relative;
 }
 .chapter .title:hover {
@@ -72,8 +73,8 @@ h3 {
 }
 .chapter .entry {
   color: #E2E3E9;
-  padding: 3px 0;
-  margin: 0 -15px 0 10px;
+  padding: 3px 0 3px 28px;
+  margin: 0 -15px 0 -18px;
   font-size: 1rem;
   opacity: 0.6;
   position: relative;
@@ -99,12 +100,13 @@ h3 {
 .chapter:before {
   content: "";
   background-color: rgba(226, 227, 233, 0.6);
-  clip-path: polygon(0 0, 100% 0, 100% 15px, 40% 21px, 40% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 18px, 3px 26px, 3px 100%, 0% 100%);
   width: 10px;
-  height: calc(100% - 5px);
-  top: 5px;
+  height: calc(100% + 0px);
+  top: 0;
   left: -18px;
   position: absolute;
+  z-index: 1;
 }
 
 .chapter.active:before {

@@ -42,15 +42,16 @@ h3{
 }
 
 .chapter{
-  margin-bottom: 3px;
+  margin-bottom: 0px;
   position: relative;
   .title{
     color: $text-header;
-    padding: 0;
+    padding: 0 0 0 15px;
     font-weight: bold;
     font-size: 1.1rem;
     opacity: .8;
     margin-right: -15px;
+    margin-left: -15px;
     position: relative;
   }
   .title:hover{
@@ -58,7 +59,7 @@ h3{
   }
   .title.active{
     opacity: 1;
-    background-color: rgba($btn-primary, .2);
+    background-color: rgba($btn-primary, .2);    
   }
   
   .title.active:after{
@@ -73,8 +74,8 @@ h3{
   
   .entry{
     color: $text-header;
-    padding: 3px 0;
-    margin: 0 -15px 0 10px;
+    padding: 3px 0 3px 28px;
+    margin: 0 -15px 0 -18px;
     font-size: 1rem;
     opacity: .6;
     position: relative;
@@ -102,12 +103,13 @@ h3{
 .chapter:before{
   content: "";
   background-color: rgba($text-header, .6);
-  clip-path: polygon(0 0, 100% 0, 100% 15px, 40% 21px, 40% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 18px, 3px 26px, 3px 100%, 0% 100%);
   width: 10px;
-  height: calc(100% - 5px);
-  top: 5px;
+  height: calc(100% + 0px);
+  top: 0;
   left: -18px;
   position: absolute;
+  z-index: 1;
 }
 
 .chapter.active:before{
