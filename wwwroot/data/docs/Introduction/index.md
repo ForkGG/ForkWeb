@@ -1,24 +1,9 @@
-# H1
-## H2
-### H3
-Normal text
-
-Table:
-
-:::table-div
-| Server     | Description |
-| :--------- | :-----:|
-| Vanilla  | The true classic minecraft server experience |
-| Paper    | Plugin modified minecraft with better performance |
-| Waterfall     | Network System for Minecraft Servers (Bungee) |
-:::
+# Introduction
 
 
-`code`
-```
-some 
-more 
-code
-```
+Welcome to the Documentation of Fork.
 
-[An epic link](https://google.com)
+This page is still under development and not all of the chapters contain 
+any information yet. If you want to help filling this page with useful 
+information, join our [Discord](https://discord.fork.gg) and we will show 
+you how to do that.
