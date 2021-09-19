@@ -9,11 +9,13 @@ After clicking it, we are prompet up with a lot of options. Don&apos;t panic! We
 
 We have different options of server:
 
+:::table-div
 | Server     | Description |
 | :--------- | :-----:|
 | Vanilla  | The true classic minecraft server experience |
 | Paper    | Plugin modified minecraft with better performance |
 | Waterfall     | Network System for Minecraft Servers (Bungee) |
+:::
 
 We can choose whatever server type we want in terms of what we need, in this case, we're gonna stick with Vanilla to show how it works out the box.
 
