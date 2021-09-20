@@ -4,14 +4,14 @@
 // Write your Javascript code.
 $(document).ready(function () {
     setScreenshotDescriptionHeight();
-});
 
-$(window).on('resize', function(){
-    setScreenshotDescriptionHeight();
-})
+    $('#screenshotCarousel').on('slide.bs.carousel', function(a){
+        switchDescription(a.from, a.to);
+    });
 
-$('#screenshotCarousel').on('slide.bs.carousel', function(a){
-    switchDescription(a.from, a.to);
+    $(window).on('resize', function(){
+        setScreenshotDescriptionHeight();
+    })
 });
 
 $(function(){
