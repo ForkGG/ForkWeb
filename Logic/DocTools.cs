@@ -6,7 +6,9 @@ using forkgg.Logic.Model.Docs;
 using Markdig;
 using Markdig.Extensions.Tables;
 using Markdig.Renderers;
+using Markdig.Renderers.Html;
 using Markdig.Syntax;
+using Markdig.Syntax.Inlines;
 
 namespace forkgg.Logic
 {
@@ -148,6 +150,16 @@ namespace forkgg.Logic
                 {
                     definition.Alignment = TableColumnAlign.Left;
                 }
+            }
+
+            foreach (LinkInline link in doc.Descendants<LinkInline>())
+            {
+                link.GetAttributes().AddPropertyIfNotExist("target", "_blank");
+            }
+
+            foreach (AutolinkInline link in doc.Descendants<AutolinkInline>())
+            {
+                link.GetAttributes().AddPropertyIfNotExist("target", "_blank");
             }
 
             var writer = new StringWriter();

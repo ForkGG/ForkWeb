@@ -119,6 +119,15 @@ h3{
     background-color: rgba($btn-primary, 1);
 }
 
+.ko-fi::after { 
+    content: '\f004';
+    font-weight: 900;
+    font-size: 8px;
+    color: rgba($btn-secondary, 1);
+    position: absolute;
+    margin: 12px 0 0 -19px;
+}
+
 .carousel{
     margin: min(4vw, 75px) 0 min(6vw, 115px) 0;
     width: 65%;
