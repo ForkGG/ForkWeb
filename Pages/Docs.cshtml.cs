@@ -11,7 +11,9 @@ namespace forkgg.Pages
         
         public void OnGet()
         {
-            
+#if DEBUG
+            DocTools.Instance.RefreshDocs();
+#endif
         }
     }
 }
