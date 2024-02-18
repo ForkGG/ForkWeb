@@ -125,6 +125,19 @@ h3 {
   overflow-y: auto;
 }
 
+.dropdown .dropdown-toggle:hover {
+  text-decoration: none;
+}
+.dropdown .dropdown-menu {
+  background-color: #292c3d;
+}
+.dropdown .dropdown-menu .dropdown-item {
+  color: #e2e3e9;
+}
+.dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #374fc3;
+}
+
 .content-host {
   margin-top: 56px;
 }

@@ -14,7 +14,7 @@ namespace forkgg.Logic
 {
     public class DocTools
     {
-        private static DocTools instance;
+        private static DocTools? instance;
         public static DocTools Instance => instance ??= new DocTools();
 
         private DocTools()
@@ -68,50 +68,69 @@ namespace forkgg.Logic
 
         private DocChapter? ConstructChapter(DirectoryInfo chapterDir)
         {
-            DocChapter result = new DocChapter { Name = chapterDir.Name, Entries = new List<DocEntry>() };
-            List<FileInfo> entryFiles = new List<FileInfo>(chapterDir.EnumerateFiles());
-
-            //Read index
-            if (entryFiles.Any(file => file.Name.ToLower().Equals("index.md")))
+            DocChapter result = new();
+            
+            // Read languages
+            foreach (DirectoryInfo languageDir in chapterDir.EnumerateDirectories())
             {
-                try
+                Language? language = Language.SupportedLanguages.FirstOrDefault(l => l.DirectoryName == languageDir.Name);
+                if (language == null)
                 {
-                    DocFileContent indexContent =
-                        ReadFileContent(entryFiles.First(file => file.Name.ToLower().Equals("index.md")));
-                    result.ContentMd = indexContent.Md;
-                    result.ContentHtml = indexContent.Html;
-                    if (result.ContentMd.Length == 0)
-                    {
-                        Console.WriteLine($"Chapter {chapterDir.Name} is empty. Skipping chapter...");
-                        return null;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Could not read index for chapter " + chapterDir.Name + ": " + e);
-                }
-            }
-
-            IEnumerable<string> entryNames = File.ReadAllLines(Path.Combine(chapterDir.FullName, "entries.txt"));
-            foreach (string entryName in entryNames)
-            {
-                if (string.IsNullOrEmpty(entryName) ||
-                    !entryFiles.Any(dir => dir.Name.ToLower().Equals(entryName.ToLower() + ".md")))
-                {
-                    Console.WriteLine("No file found for chapter: " + entryName);
+                    Console.WriteLine(
+                        $"ERROR: Language directory {languageDir.Name} found in chapter {chapterDir.Name}, but is not supported");
                     continue;
                 }
 
-                FileInfo entryFile = entryFiles.First(dir => dir.Name.ToLower().Equals(entryName.ToLower() + ".md"));
-                try
+                DocLanguageChapter languageChapter = new() { Name = chapterDir.Name, Language = language, Entries = new List<DocEntry>() };
+                result.LanguageChapters.Add(language, languageChapter);
+
+                List<FileInfo> entryFiles = new(languageDir.EnumerateFiles());
+
+                //Read index
+                if (entryFiles.Any(file => file.Name.ToLower().Equals("index.md")))
                 {
-                    DocEntry? docEntry = ConstructEntry(entryFile);
-                    if (docEntry != null)
-                        result.Entries.Add(docEntry);
+                    try
+                    {
+                        DocFileContent indexContent =
+                            ReadFileContent(entryFiles.First(file => file.Name.ToLower().Equals("index.md")));
+                        languageChapter.ContentMd = indexContent.Md;
+                        languageChapter.ContentHtml = indexContent.Html;
+                        languageChapter.Title = indexContent.Title;
+                        if (languageChapter.ContentMd.Length == 0)
+                        {
+                            Console.WriteLine($"Chapter {chapterDir.Name} (language {languageDir.Name}) is empty. Skipping chapter...");
+                            return null;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"Could not read index for chapter {chapterDir.Name}, language {languageDir.Name}: " + e.Message);
+                    }
                 }
-                catch (Exception e)
+
+                Console.WriteLine($"=== Parsing Chapter {chapterDir.Name} (language {languageDir.Name}) ===");
+                IEnumerable<string> entryNames = File.ReadAllLines(Path.Combine(chapterDir.FullName, "entries.txt"));
+                foreach (string entryName in entryNames)
                 {
-                    Console.WriteLine("Could not create chapter " + entryName + ": " + e);
+                    if (string.IsNullOrEmpty(entryName) ||
+                        !entryFiles.Any(dir => dir.Name.ToLower().Equals(entryName.ToLower() + ".md")))
+                    {
+                        Console.WriteLine("No file found for chapter: " + entryName);
+                        continue;
+                    }
+
+                    FileInfo entryFile =
+                        entryFiles.First(dir => dir.Name.ToLower().Equals(entryName.ToLower() + ".md"));
+                    try
+                    {
+                        DocEntry? docEntry = ConstructEntry(entryFile);
+                        if (docEntry != null)
+                            languageChapter.Entries.Add(docEntry);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Could not create chapter " + entryName + ": " + e);
+                    }
                 }
             }
 
@@ -128,7 +147,8 @@ namespace forkgg.Logic
             }
             return new DocEntry
             {
-                Name = Path.GetFileNameWithoutExtension(entryFileInfo.Name), 
+                Title = content.Title, 
+                Name = Path.GetFileNameWithoutExtension(entryFileInfo.Name),
                 ContentMd = content.Md,
                 ContentHtml = content.Html
             };
@@ -136,9 +156,12 @@ namespace forkgg.Logic
 
         private DocFileContent ReadFileContent(FileInfo fileInfo)
         {
-            string md = File.ReadAllText(fileInfo.FullName);
+            var allLines = File.ReadLines(fileInfo.FullName).ToList();
+            string title = GetTitleFromMarkdown(allLines.FirstOrDefault()) ??
+                           Path.GetFileNameWithoutExtension(fileInfo.Name);
+            string md = String.Join("\n", allLines);
             string html = CreateHtmlFromMd(md);
-            return new DocFileContent { Md = md, Html = html };
+            return new DocFileContent { Md = md, Html = html, Title = title};
         }
 
         private string CreateHtmlFromMd(string md)
@@ -174,6 +197,15 @@ namespace forkgg.Logic
         {
             public string Md { get; set; }
             public string Html { get; set; }
+            public string Title { get; set; }
+        }
+
+        /**
+         * Get title of chapter or entry name from the md file (first line of file)
+         */
+        private string? GetTitleFromMarkdown(string? firstLine)
+        {
+            return firstLine?.Replace("#", "");
         }
     }
 }

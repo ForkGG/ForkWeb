@@ -3,6 +3,7 @@
     public class DocEntry
     {
         public string Name { get; set; }
+        public string Title { get; set; }
         public string ContentMd { get; set; }
         public string ContentHtml { get; set; }
     }

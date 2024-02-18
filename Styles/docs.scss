@@ -11,40 +11,44 @@ body {
   /*font-family: Montserrat;*/
 }
 
-h1{
+h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: $text-header;
 }
-h2{
+
+h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: $text-smolheader;
 }
 
-h3{
+h3 {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: $text-smolheader;
 }
 
-.navbar{
+.navbar {
   background-color: $background-light;
 }
-.navbar-dark{
+
+.navbar-dark {
   background-color: transparent;
   width: 100%;
   margin: 0;
   padding-right: 0;
-  div{
+
+  div {
     width: 100%;
   }
 }
 
-.chapter{
+.chapter {
   margin-bottom: 0px;
   position: relative;
-  .title{
+
+  .title {
     color: $text-header;
     padding: 0 0 0 15px;
     font-weight: bold;
@@ -54,15 +58,17 @@ h3{
     margin-left: -15px;
     position: relative;
   }
-  .title:hover{
+
+  .title:hover {
     opacity: 1;
   }
-  .title.active{
+
+  .title.active {
     opacity: 1;
-    background-color: rgba($btn-primary, .2);    
+    background-color: rgba($btn-primary, .2);
   }
-  
-  .title.active:after{
+
+  .title.active:after {
     content: "";
     background-color: $btn-primary;
     clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 60%, 35% 50%);
@@ -71,8 +77,8 @@ h3{
     right: 0;
     position: absolute;
   }
-  
-  .entry{
+
+  .entry {
     color: $text-header;
     padding: 3px 0 3px 28px;
     margin: 0 -15px 0 -18px;
@@ -80,15 +86,17 @@ h3{
     opacity: .6;
     position: relative;
   }
-  .entry:hover{
+
+  .entry:hover {
     opacity: .9;
   }
-  .entry.active{
+
+  .entry.active {
     opacity: .9;
     background-color: rgba($btn-primary, .2);
   }
-  
-  .entry.active:after{
+
+  .entry.active:after {
     content: "";
     background-color: $btn-primary;
     clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%, 0 60%, 35% 50%);
@@ -100,7 +108,7 @@ h3{
   }
 }
 
-.chapter:before{
+.chapter:before {
   content: "";
   background-color: rgba($text-header, .6);
   clip-path: polygon(0 0, 100% 0, 100% 18px, 3px 26px, 3px 100%, 0% 100%);
@@ -112,11 +120,11 @@ h3{
   z-index: 1;
 }
 
-.chapter.active:before{
+.chapter.active:before {
   background-color: rgba($text-header, 1);
 }
 
-.sidebar{
+.sidebar {
   background-color: rgba($background-light, .8);
   position: sticky;
   top: 56px;
@@ -128,67 +136,100 @@ h3{
   overflow-y: auto;
 }
 
-.content-host{
+.dropdown{
+  .dropdown-toggle{
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .dropdown-menu {
+    background-color: rgba($background-light, 1);
+
+    & .dropdown-item {
+      color: rgba($text-header, 1);
+
+      &:hover {
+        background-color: rgba($btn-primary, 1);
+      }
+    }
+  }
+}
+
+.content-host {
   margin-top: 56px;
 }
 
-.chapter-content{
+.chapter-content {
   max-width: 1000px;
-  h1{
+
+  h1 {
     text-align: center;
     color: $text-header;
     font-weight: bold;
     margin-top: 50px;
   }
-  h2{
+
+  h2 {
     margin-top: 30px;
     color: $text-smolheader;
     font-weight: bold;
   }
-  h3{
+
+  h3 {
     margin-top: 20px;
     margin-left: 15px;
     color: $text-smolheader;
     font-weight: normal;
     font-style: italic;
   }
-  code{
+
+  code {
     color: $text-code;
   }
-  p{
+
+  p {
     margin-left: 30px;
   }
-  pre{
+
+  pre {
     margin-left: 35px;
     margin-right: 35px;
     padding: 3px 10px;
     background-color: $background-lighter;
     position: relative;
   }
-  ul{
+
+  ul {
     margin-left: 30px;
   }
-  img{
+
+  img {
     max-height: 300px;
   }
-  .table-div{
+
+  .table-div {
     margin: 0 35px;
-    table{
-      th, td{
+
+    table {
+      th, td {
         border: 0;
       }
-      thead{
+
+      thead {
         background-color: $background-light;
-        tr th{
+
+        tr th {
           padding-left: 20px;
           font-weight: normal;
           font-size: 1.3rem;
           color: #94959E;
         }
       }
-      tbody{
+
+      tbody {
         background-color: $background-lighter;
-        tr td{
+
+        tr td {
           color: $text-smolheader;
           padding-left: 50px;
         }

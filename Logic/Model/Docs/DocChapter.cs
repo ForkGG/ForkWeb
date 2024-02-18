@@ -4,9 +4,6 @@ namespace forkgg.Logic.Model.Docs
 {
     public class DocChapter
     {
-        public string Name { get; set; }
-        public string ContentMd { get; set; }
-        public string ContentHtml { get; set; }
-        public List<DocEntry> Entries { get; set; }
+        public Dictionary<Language, DocLanguageChapter> LanguageChapters { get; set; } = new();
     }
 }

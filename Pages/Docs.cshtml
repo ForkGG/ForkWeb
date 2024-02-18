@@ -1,4 +1,5 @@
 ﻿@page
+@using forkgg.Logic.Model.Docs
 @model forkgg.Pages.Docs
 @{
     ViewData["Title"] = "Docs - Fork";
@@ -10,20 +11,44 @@
 <div id="docBody" class="container-fluid">
     <nav class="navbar fixed-top ">
         <a class="nav-item nav-link" asp-area="" asp-page="Index"><i class="fas fa-arrow-circle-left mr-2"></i>Back to Fork</a>
-        Fork Documentation
+        <div class="d-flex">
+            <div class="dropdown mr-3">
+                <a class="dropdown-toggle" href="#" id="Dropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-globe"></i>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="Dropdown">
+                    @foreach (var language in Language.SupportedLanguages)
+                    {
+                        <li>
+                            <a class="dropdown-item pr-3 pl-3" asp-page="Docs" asp-route-lang="@language.DirectoryName">
+                                <div style="width: 20px; display: inline-grid">
+                                    @if (Model.ActiveLanguage == language)
+                                    {
+                                        <i class="fa fa-check text-success mr-2"></i>
+                                    }
+                                </div>
+                                    @language.LocalizedName
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            Fork Documentation
+        </div>
     </nav>
     <div class="row">
         @*Sidebar*@
         <nav class="col-3 col-md-2 sidebar">
             <div class="flex-column navbar align-items-baseline navbar-dark">
                 <div>
-                    @foreach (var chapter in Model.Chapters)
+                    @foreach (var chapter in Model.LanguageChapters)
                     {
                         <div class="chapter mb-3">
-                            <a href="#@chapter.Name.Replace(" ","-").Replace(".","-")" class="nav-item nav-link title">@chapter.Name</a>
+                            <a href="#@chapter.Name.Replace(" ", "-").Replace(".", "-")" class="nav-item nav-link title">@chapter.Title</a>
                             @foreach (var entry in chapter.Entries)
                             {
-                                <a href="#@entry.Name.Replace(" ","-").Replace(".","-")" class="nav-item nav-link entry">@entry.Name</a>
+                                <a href="#@entry.Name.Replace(" ", "-").Replace(".", "-")" class="nav-item nav-link entry">@entry.Title</a>
                             }
                         </div>
                     }
@@ -31,18 +56,18 @@
             </div>
         </nav>
         <div class="col-9 col-md-10 content-host">
-            @foreach (var chapter in Model.Chapters)
+            @foreach (var chapter in Model.LanguageChapters)
             {
                 <div class="chapter-content ml-5">
                     @if (!string.IsNullOrEmpty(chapter.ContentHtml))
                     {
-                        <div id="@chapter.Name.Replace(" ", "-").Replace(".","-")">
+                        <div id="@chapter.Name.Replace(" ", "-").Replace(".", "-")">
                             @Html.Raw(chapter.ContentHtml)
                         </div>
                     }
                     @foreach (var entry in chapter.Entries)
                     {
-                        <div id="@entry.Name.Replace(" ", "-").Replace(".","-")">
+                        <div id="@entry.Name.Replace(" ", "-").Replace(".", "-")">
                             @Html.Raw(entry.ContentHtml)
                         </div>
                     }
