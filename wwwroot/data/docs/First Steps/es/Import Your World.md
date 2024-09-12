@@ -1,6 +1,6 @@
 ## Importando tu Mundo
 
-Espera, ¿no quieres un nuevo mundo? Si ese es tu caso, estás en la sección correcta. Comencemos.
+Espera, ¿no quieres un mundo nuevo? Si ese es tu caso, estás en la sección correcta. Comencemos.
 
 Primero, hagámoslo en la sección ``Create a server``.
 Cuando empezamos a crear un servidor, podemos simplemente bajar hasta encontrar el botón de la sección ``Misc`` y hacemos clien en _Click to select yout World_
