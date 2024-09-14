@@ -13,7 +13,8 @@ public class Language
 
     public static Language ENGLISH = new() {Name = "English", LocalizedName = "English", DirectoryName = "en"};
     public static Language FRENCH = new() {Name = "French", LocalizedName = "Français",DirectoryName = "fr"};
+    public static Language SPANISH = new() { Name = "Spanish", LocalizedName = "Español", DirectoryName = "es" };
     public static Language GERMAN = new() {Name = "German", LocalizedName = "Deutsch", DirectoryName = "de"};
     
-    public static List<Language> SupportedLanguages { get; } = new() { ENGLISH, FRENCH };
+    public static List<Language> SupportedLanguages { get; } = new() { ENGLISH, FRENCH, SPANISH};
 }
