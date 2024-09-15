@@ -72,7 +72,7 @@ pack dans Forge si jamais vous avez lu et compris les autres étapes*
 
 ##### Erreurs / Problèmes:
 
-###### startserver.bat` n'arrête pas de se lancer / de redémarrer
+###### `startserver.bat` n'arrête pas de se lancer / de redémarrer
 
 Cela est dû à une `EULA` non acceptée. Si jamais acecptée, cela recommencera encore et encore. `Solution` - *Fermer le
 CMD avec CTRL+C & Y est moins inquiétant.*
