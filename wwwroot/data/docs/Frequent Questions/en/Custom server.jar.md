@@ -49,7 +49,7 @@ When you download your server pack keep the contents outside of `Fork` for the t
 9. Start the server in Fork. **Little warning**: *You will see errors with `colour` this time, it can be scary but you`re a big person, I believe in you* 🫂.
 
 ##### Errors / Issues:
-###### startserver.bat` keeps looping / restarting
+###### `startserver.bat` keeps looping / restarting
 Found that is due to the `EULA` not being accepted and will keep happening until done. `Solution` - *I find closing the CMD with CTRL+C & Y less worrying.* 
 ###### Server failed to boot after EULA
 Found that if you are running something on the `query.port`, `rcon.port`, `server-port` or `mod ports` it will cause the server to stop as to not cause a conflict. `Solution` - *change the ports to something unused / not bound.*
