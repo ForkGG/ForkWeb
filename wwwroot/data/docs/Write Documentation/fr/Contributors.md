@@ -2,6 +2,7 @@
 * IKERNEII
 * MrMgpixels
 * MadeByIToncek
+* Vex!
 * CapJumper (traduction française)
 * Supraim (traduction espagnol)
 
